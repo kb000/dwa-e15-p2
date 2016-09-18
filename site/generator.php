@@ -1,3 +1,4 @@
 <?php
 
-# Nothing here yet.
+# Static stubs
+$generatedPassword = "this-is-an-example-password";
