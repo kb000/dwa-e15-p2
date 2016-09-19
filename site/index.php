@@ -14,36 +14,56 @@
 </head>
 
 <body>
-
     <div class="content-wrapper">
         <div class="content container">
-            <div class="row" />
-                <div class="col-xs-8 col-xs-offset-2">
-                    <div class="panel">
-                        <?php echo $generatedPassword; ?>
-                    </div>
-                </div>
+            <h1>Passphrase Generator</h1>
+            <div class="password-panel row panel">
+            Your randomly generated passphrase:
+            <div class="password-display row h2">
+                <?php echo $generatedPassword; ?>
             </div>
-            <div id="options-form panel">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <!-- Number of words -->
-                        <label for="requestedWordCountInput">Number of words:</label>
-                        <input type="number" class="form-control" id="requestedWordCountInput" min="1" value="4" max="16" step="1">
-                    </div>
-                    <div class="form-group">
-                        <!-- Include a number? -->
-                        <label for="requestedIncludeANumber">Include a Number?</label>
-                        <input type="checkbox" class="form-control" id="requestedIncludeANumber">
-                    </div>
-                    <div class="form-group">
-                        <!-- Include special symbols? -->
-                        <label for="requestedIncludeSymbols">Include special symbols?</label>
-                        <input type="checkbox" class="form-control" id="requestedIncludeSymbols">
-                    </div>
-                    <div class="form-group">
-
-                </form>
+            <!-- TODO: Maybe add a refresh button here to use ajax to regenerate without changing options? -->
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                    <form class="form-horizontal" method="get">
+                        <fieldset>
+                            <legend>Generation Options</legend>
+                            <div class="form-group">
+                                <!-- Number of words -->
+                                <label class="col-xs-4 control-label" for="requestedWordCountInput">Number of words:</label>
+                                <div class="col-xs-4"/>
+                                    <input class="form-control" name="words" type="number" id="requestedWordCountInput" min="1" value="<?php echo $generatedWordCount; ?>" max="16" step="1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Include a number? -->
+                                <label class="col-xs-4 control-label" for="requestedIncludes">Include:</label>
+                                <div class="col-xs-4"/>
+                                    <div class="checkbox">
+                                        <label for="requestedIncludesNumberInput">
+                                            <input name="useNumber" type="checkbox" id="requestedIncludesNumberInput" <?php echo makeCheckboxCheck($generatedDidIncludeNumber); ?>>
+                                            Number
+                                        </label>
+                                    </div>
+                                    <!-- Include special symbols? -->
+                                    <div class="checkbox">
+                                        <label for="requestedIncludesSymbolInput">
+                                            <input name="useSymbol" type="checkbox" id="requestedIncludesSymbolInput" <?php echo makeCheckboxCheck($generatedDidIncludeSymbol); ?>>
+                                            Symbol
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 col-xs-offset-4">
+                                    <button class="btn btn-primary">Generate</input>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -34,12 +34,33 @@ h3 {
     overflow-x: auto;
 }
 
+.password-panel {
+    padding: 1em;
+    background-color: #B4C4EE;
+    width: 90%;
+    margin-left:  auto;
+    margin-right:  auto;
+}
+
+.password-display {
+    text-align: center;
+}
+
+.form-group {
+    padding-bottom: .5em;
+}
+
 /* Responsive css for medium screens */
 
 @media (min-width: 48em) {
     .content {
         padding: 1em;
         font-size: 16px;
+    }
+    
+    .password-panel {
+        padding: 2em;
+        width: 60%;
     }
 }
 
