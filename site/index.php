@@ -34,24 +34,24 @@
                             <div class="form-group">
                                 <!-- Number of words -->
                                 <label class="col-xs-4 control-label" for="requestedWordCountInput">Number of words:</label>
-                                <div class="col-xs-4"/>
-                                    <input class="form-control" name="<?= $KEY_WORD_COUNT ?>" type="number" id="requestedWordCountInput" min="1" value="<?php echo $generatedWordCount; ?>" max="16" step="1">
+                                <div class="col-xs-4">
+                                    <input class="form-control" name="<?= $KEY_WORD_COUNT ?>" type="number" id="requestedWordCountInput" min="1" value="<?php echo $generatedWordCount; ?>" max="16" step="1" />
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-xs-4 control-label">Include:</label>
                                 <!-- Include a number? -->
-                                <label class="col-xs-4 control-label" for="requestedIncludes">Include:</label>
-                                <div class="col-xs-4"/>
+                                <div class="col-xs-4">
                                     <div class="checkbox">
                                         <label for="requestedIncludesNumberInput">
-                                            <input name="<?= $KEY_INCL_NUMBER ?>" type="checkbox" id="requestedIncludesNumberInput" <?php echo makeCheckboxCheck($generatedDidIncludeNumber); ?>>
+                                            <input name="<?= $KEY_INCL_NUMBER ?>" type="checkbox" id="requestedIncludesNumberInput" <?php echo makeCheckboxCheck($generatedDidIncludeNumber); ?> />
                                             Number
                                         </label>
                                     </div>
                                     <!-- Include special symbols? -->
                                     <div class="checkbox">
                                         <label for="requestedIncludesSymbolInput">
-                                            <input name="<?= $KEY_INCL_SYMBOL ?>" type="checkbox" id="requestedIncludesSymbolInput" <?php echo makeCheckboxCheck($generatedDidIncludeSymbol); ?>>
+                                            <input name="<?= $KEY_INCL_SYMBOL ?>" type="checkbox" id="requestedIncludesSymbolInput" <?php echo makeCheckboxCheck($generatedDidIncludeSymbol); ?> />
                                             Symbol
                                         </label>
                                     </div>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-4 col-xs-offset-4">
-                                    <button class="btn btn-primary">Generate</input>
+                                    <button class="btn btn-primary">Generate</button>
                                 </div>
                             </div>
                         </fieldset>
