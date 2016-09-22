@@ -17,6 +17,7 @@
     <div class="content-wrapper">
         <div class="content container">
             <h1>Passphrase Generator</h1>
+            <div class="alert-container"><?php echo $generatorAlerts; ?></div>
             <div class="password-panel row panel">
             Your randomly generated passphrase:
             <div class="password-display row h2">

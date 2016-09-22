@@ -59,18 +59,18 @@ class GeneratorErrors {
     }
 
     /**
-     * Gets the HTML representation of the error messages.
+     * Returns the messages as HTML alerts.
      */
-    public function getHtml() {
-        # TODO: Build bootstrap error panels.
-        if(isset($this->messages) && count($this->messages) > 0) {
-            print_r($this->messages);
+    public function makeAlerts() {
+        $alerts = '';
+        foreach($this->messages as $message) {
+            $alerts .= '<div class="alert alert-danger">' . $message . '</div>' . "\n";
         }
+        return $alerts;
     }
 }
 
 $generatorErrors = new GeneratorErrors();
-print_r($generatorErrors);
 
 # Retrieve and parse wordCount.
 $wordCount = getRequestEntry($KEY_WORD_COUNT, $DEFAULT_WORD_COUNT);
@@ -106,6 +106,7 @@ if (isset($_REQUEST['debug']) && $_REQUEST['debug'] == 'generator.php') {
 }
 
 # Variables to include in output.
+$generatorAlerts = $generatorErrors->makeAlerts();
 $generatedPassword = implode($SEPARATOR, $wordSequence) . $appendSymbol;
 $generatedWordCount = $wordCount;
 $generatedDidIncludeNumber = $includeNumber;
